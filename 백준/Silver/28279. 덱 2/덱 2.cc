@@ -3,9 +3,9 @@ using namespace std;
 
 class myDeck {
 private:
-  int list[2000002];
-  int head = 1000001;
-  int last = 1000001;
+  int list[2000001];
+  int head = 1000000;
+  int last = 1000000;
 
 public:
   void pushFront(int num) {
