@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
-int price[1000][3];
 int sum[1000][3];
 
 int main() {
@@ -14,11 +12,11 @@ int main() {
 		for (int j = 0; j < 3; j++) {
 			int temp;
 			cin >> temp;
-			price[i][j] = temp;
 			sum[i][j] = temp;
 		}
 	}
 
+	// 뒤에서 부터 채워가는 방식
 	for (int i = num - 2; i >= 0; i--) {
 		for (int j = 0; j < 3; j++) {
 			if (sum[i + 1][(j + 1) % 3] > sum[i + 1][(j + 2) % 3]) {
