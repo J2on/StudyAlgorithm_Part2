@@ -9,6 +9,7 @@ string solution(string s, string skip, int index) {
     
     vector<char> alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     
+    // Skip해야 할 char 제거
     vector<char> vec;
     bool isValid;
     for(auto& c : alphabet){
@@ -22,12 +23,14 @@ string solution(string s, string skip, int index) {
         if(isValid) vec.push_back(c);
     }
     
+    // 변환을 위한 Hash Table 작성
     unordered_map<char, char> um;
     int vecSize = vec.size();
     for(int i=0; i<vecSize; i++){
         um[vec[i]] = vec[(i+index) % vecSize];
     }
     
+    // Hashing을 이용한 변환
     for(auto& c:s){
         answer += um[c];
     }
