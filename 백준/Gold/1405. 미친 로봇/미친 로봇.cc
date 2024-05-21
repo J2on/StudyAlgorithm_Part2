@@ -48,6 +48,6 @@ int main()
 	}
 
 	dfs(15, 15, 0, n, 1);
-	cout << setprecision(10);
+	cout << setprecision(9);
 	cout << result;
 }
