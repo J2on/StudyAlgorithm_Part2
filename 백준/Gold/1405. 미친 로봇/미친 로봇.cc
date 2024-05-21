@@ -11,6 +11,7 @@ double percent[4];
 
 void dfs(int x, int y, int index, int n, double totalPercent) 
 {
+	// 마지막에 닿았을 때, result에 해당까지의 확률을 더해줌 
 	if (index == n)
 	{
 		result += totalPercent;
@@ -27,6 +28,7 @@ void dfs(int x, int y, int index, int n, double totalPercent)
 		{
 			if (visited[newX][newY] == false) {
 				visited[newX][newY] = true;
+				// 확률을 계속해서 곱해주며 계산
 				dfs(newX, newY, index + 1, n, totalPercent * percent[i]);
 				visited[newX][newY] = false;
 			}
@@ -46,6 +48,6 @@ int main()
 	}
 
 	dfs(15, 15, 0, n, 1);
-	cout << setprecision(16);
+	cout << setprecision(10);
 	cout << result;
 }
