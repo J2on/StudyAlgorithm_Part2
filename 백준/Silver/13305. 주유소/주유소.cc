@@ -3,8 +3,8 @@
 using namespace std;
  
  
-int lw[100001];
-int op[100001];
+long long lw[100001];
+long long op[100001];
 
 int main()
 {
@@ -19,9 +19,9 @@ int main()
         cin >>op[i];
     }
     
-    int totalPrice = 0;
-    int oil = lw[0]; // 구매 양, 다음 지점 까지는 무조건 사야하니
-    int nowPrice = op[0];
+    long long totalPrice = 0;
+    long long oil = lw[0]; // 구매 양, 다음 지점 까지는 무조건 사야하니
+    long long nowPrice = op[0];
     
     for(int i=1; i<n; i++)
     {
@@ -37,7 +37,7 @@ int main()
         }
     }
     
-    totalPrice += oil * nowPrice; // 마지막까지 남아있는 경우
+    totalPrice += oil * nowPrice; // 마지막까지 남아있는 경우 
     
     cout << totalPrice;
     
